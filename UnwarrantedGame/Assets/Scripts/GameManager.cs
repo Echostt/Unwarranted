@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 	//main player character, to be handled seperately between scenes
-	public GameObject player;
-	//base object for ground item
-	public GameObject cubePrefab;
-	public int gridWidth = 5;
-	public int gridHeight = 10;
+	public GameObject[] currentPlayers;
+	//generic enemy object
+	public GameObject[] currentEnemies;
 
-	//materials avialable to tiles
-	public Material[] materialsList;
+	private bool isPlayerTurn;
 
 	//handle interactions between units
 		//unit1 attacks unit2
@@ -21,15 +18,47 @@ public class GameManager : MonoBehaviour {
 
 	void Start(){
 		//find gameobjects
-		materialsList = GameObject.FindGameObjectWithTag("MaterialList").GetComponent<MeshRenderer>().materials;
-		//place some cubes 
-		for (int i = 0; i < gridWidth; ++i){
-			for (int j = 0; j < gridHeight; ++j){
-				GameObject tile = Object.Instantiate(cubePrefab, new Vector3(
-					i * cubePrefab.transform.localScale.x, 0,
-					j * cubePrefab.transform.localScale.z), Quaternion.identity);
-				tile.GetComponent<MeshRenderer>().material = materialsList[Mathf.Abs(i-j) % materialsList.Length];
+		currentPlayers = GameObject.FindGameObjectsWithTag("Player");
+		currentEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+		startingGameCommands();
+	}
+
+	void startingGameCommands(){
+		//launch tutorial, controls, info
+		isPlayerTurn = true;
+		turnHandler();
+	}
+
+	void turnHandler(){
+		if (isPlayerTurn){
+			//some easy fake player movement
+			if(Input.GetKeyDown(KeyCode.UpArrow)) { 
+				GameObject.FindGameObjectWithTag("Player").transform.Translate(new Vector3(0, 1, 0));
+				isPlayerTurn = false;
+			} else if (Input.GetKeyDown(KeyCode.DownArrow)) {
+				GameObject.FindGameObjectWithTag("Player").transform.Translate(new Vector3(0, -1, 0));
+				isPlayerTurn = false;
 			}
+		} else{
+			for (int i = 0; i < currentEnemies.Length; ++i){
+				currentEnemies[i].transform.position +=  Vector3.left;
+			}
+			isPlayerTurn = true;
 		}
 	}
+
+	//simple turn ending function
+	public void setPlayerTurnFalse(){
+		isPlayerTurn = false;
+	}
+	//allows the player to gain control
+	public void setPlayerTurnTrue(){
+		isPlayerTurn = true;
+	}
+
+	void Update(){
+		turnHandler();
+	}
+
 }
