@@ -3,18 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-	//main player character, to be handled seperately between scenes
+	//player characters
 	public GameObject[] currentPlayers;
-	//generic enemy object
+	//enemy objects
 	public GameObject[] currentEnemies;
 
 	private bool isPlayerTurn;
-
-	//handle interactions between units
-		//unit1 attacks unit2
-			//check for damage taken, death sequence
-
-	//handle game flow, turns, conditions (game state)
 
 	void Start(){
 		//find gameobjects
@@ -32,17 +26,23 @@ public class GameManager : MonoBehaviour {
 
 	void turnHandler(){
 		if (isPlayerTurn){
-			//some easy fake player movement
-			if(Input.GetKeyDown(KeyCode.UpArrow)) { 
-				GameObject.FindGameObjectWithTag("Player").transform.Translate(new Vector3(0, 1, 0));
-				isPlayerTurn = false;
-			} else if (Input.GetKeyDown(KeyCode.DownArrow)) {
-				GameObject.FindGameObjectWithTag("Player").transform.Translate(new Vector3(0, -1, 0));
+			//some easy player movement
+			if(Input.anyKeyDown) {
+				if(Input.GetKeyDown(KeyCode.UpArrow)) { 
+					GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.forward);
+				} else if(Input.GetKeyDown(KeyCode.DownArrow)) {
+					GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.back);
+				} else if(Input.GetKeyDown(KeyCode.RightArrow)) {
+					GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.right);
+				} else if(Input.GetKeyDown(KeyCode.LeftArrow)) {
+					GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.left);
+				}
 				isPlayerTurn = false;
 			}
 		} else{
+			//Computer's turn, AI implementations todo
 			for (int i = 0; i < currentEnemies.Length; ++i){
-				currentEnemies[i].transform.position +=  Vector3.left;
+				//currentEnemies[i].transform.Translate(Vector3.left);
 			}
 			isPlayerTurn = true;
 		}

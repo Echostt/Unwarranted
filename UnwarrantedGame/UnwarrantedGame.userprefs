@@ -1,12 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerColliderMaster.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\GroundTileBase.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="45" Column="43" />
-      <File FileName="Assets\Scripts\EnemyUnit.cs" Line="5" Column="41" />
-      <File FileName="Assets\Scripts\EnemySpawnLocationsInit.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerColliderMaster.cs" Line="10" Column="1" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="14" Column="21" />
+      <File FileName="Assets\Scripts\PlayerColliderMaster.cs" Line="7" Column="9" />
+      <File FileName="Assets\Scripts\Base Classes\clsUnitBase.cs" Line="18" Column="20" />
+      <File FileName="Assets\Scripts\CameraFollow.cs" Line="17" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
