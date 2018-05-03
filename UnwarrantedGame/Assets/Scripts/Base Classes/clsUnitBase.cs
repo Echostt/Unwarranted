@@ -22,6 +22,12 @@ public class clsUnitBase : MonoBehaviour {
 		//movement points
 	public int moveCount;
 
+	private GameObject gm;
+
+	void Start(){
+		gm = GameObject.Find("GameManager");
+	}
+
 	///Reduces hp by passed amount
 	public void reduceHP(int value){
 		this.currentHP -= value;
@@ -29,7 +35,7 @@ public class clsUnitBase : MonoBehaviour {
 		scaleHPBar();
 		//when hp is depleted, object gets destroyed
 		if (this.currentHP <= 0){
-			Debug.Log("DESTROYED");
+			Debug.Log("DESTROYED " + this.gameObject);
 			GameObject.Destroy(this.gameObject);
 		}
 	}
@@ -45,14 +51,17 @@ public class clsUnitBase : MonoBehaviour {
 	///Look at object in direction and handle accordingly
 	public void checkMove(Vector3 checkDirection){
 		RaycastHit hitInfo;
+		//if a collision is detected, handle the intervening object, otherwise check move cost
 		if (Physics.Raycast(this.gameObject.transform.position, checkDirection, out hitInfo, 1.0f)){
 			//all moves need to be checked from player's side and computer's side
 			if (this.gameObject.tag == "Player"){ //Player's Turn
-				this.GetComponent<PlayerColliderMaster>().checkCollideList(hitInfo.collider);
+				gm.GetComponent<ColliderMaster>().checkCollideList(hitInfo.collider);
 			} else { //Computer's Turn
 				
 			}
 		} else {
+			Physics.Raycast(this.gameObject.transform.position + checkDirection, Vector3.down, out hitInfo, 1.0f);
+			this.moveCount -= gm.GetComponent<ColliderMaster>().checkCollideList(hitInfo.collider);
 			this.gameObject.transform.Translate(checkDirection);
 		}
 

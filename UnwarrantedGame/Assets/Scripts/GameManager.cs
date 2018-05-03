@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour {
 	//player characters
@@ -59,6 +60,18 @@ public class GameManager : MonoBehaviour {
 
 	void Update(){
 		turnHandler();
+	}
+
+
+	/// <summary>
+	/// Converts Player position to TileMap coords and removes the Tile at that location.
+	/// </summary>
+	void changeTileAtPlayerLoc(){
+		//select the Grid for tile position
+		//Debug.Log(tiles.LocalToCell(GameObject.Find("Player").transform.position));
+		Vector3Int currentTile = new Vector3Int((int)this.gameObject.transform.position.x, (int)this.gameObject.transform.position.z, 0);
+		UnityEngine.Tilemaps.Tilemap tilemap = GameObject.Find("Grid").GetComponent<Grid>().GetComponentInChildren<Tilemap>();
+		tilemap.SetTile(currentTile, null);
 	}
 
 }
