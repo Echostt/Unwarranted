@@ -5,16 +5,28 @@ using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour {
 	//player characters
-	public GameObject[] currentPlayers;
+	public List<GameObject> currentPlayers;
 	//enemy objects
-	public GameObject[] currentEnemies;
+	public List<GameObject> currentEnemies;
 
 	private bool isPlayerTurn;
 
 	void Start(){
 		//find gameobjects
-		currentPlayers = GameObject.FindGameObjectsWithTag("Player");
-		currentEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+		//load currently active players and enemies
+		//have to find objects into an array, and then fill into List to be used for computer controller
+		GameObject[] arrCurrPlayer = GameObject.FindGameObjectsWithTag("Player");
+		for (int i = 0; i < arrCurrPlayer.Length; ++i){
+			GameObject cpy = arrCurrPlayer[i];
+			cpy.GetComponent<clsUnitBase>().ID = i;
+			currentPlayers.Add(cpy);
+		}
+		GameObject[] arrCurrEnemy = GameObject.FindGameObjectsWithTag("Enemy");
+		for (int i = 0; i < arrCurrEnemy.Length; ++i){
+			GameObject cpy = arrCurrEnemy[i];
+			cpy.GetComponent<clsUnitBase>().ID = i;
+			currentEnemies.Add(cpy);
+		}
 
 		startingGameCommands();
 	}
@@ -42,8 +54,11 @@ public class GameManager : MonoBehaviour {
 			}
 		} else{
 			//Computer's turn, AI implementations todo
-			for (int i = 0; i < currentEnemies.Length; ++i){
-				//currentEnemies[i].transform.Translate(Vector3.left);
+			for (int i = 0; i < currentEnemies.Count; ++i){
+				Vector3 directionChoice = this.GetComponent<ComputerControllerBase>().moveTowardSimple(
+					currentEnemies[i].gameObject, 
+					GameObject.FindGameObjectWithTag("Player"));
+				currentEnemies[i].GetComponent<clsUnitBase>().checkMove(directionChoice);
 			}
 			isPlayerTurn = true;
 		}

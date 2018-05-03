@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Base Classes\clsUnitBase.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ColliderMaster.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameManager.cs" Line="72" Column="132" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="55" Column="10" />
+      <File FileName="Assets\Scripts\Base Classes\clsUnitBase.cs" Line="42" Column="72" />
+      <File FileName="Assets\Scripts\AI\ComputerControllerBase.cs" Line="31" Column="25" />
       <File FileName="Assets\Scripts\ColliderMaster.cs" Line="6" Column="42" />
-      <File FileName="Assets\Scripts\Base Classes\clsUnitBase.cs" Line="25" Column="20" />
-      <File FileName="Assets\Scripts\CameraFollow.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

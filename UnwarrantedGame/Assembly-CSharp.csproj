@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AI\ComputerControllerBase.cs" />
      <Compile Include="Assets\Scripts\Base Classes\clsGroundTileBase.cs" />
      <Compile Include="Assets\Scripts\Base Classes\clsUnitBase.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />

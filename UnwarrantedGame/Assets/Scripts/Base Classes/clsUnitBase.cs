@@ -22,6 +22,9 @@ public class clsUnitBase : MonoBehaviour {
 		//movement points
 	public int moveCount;
 
+	//Number used for identification within gamemanager
+	public int ID;
+
 	private GameObject gm;
 
 	void Start(){
@@ -35,6 +38,8 @@ public class clsUnitBase : MonoBehaviour {
 		scaleHPBar();
 		//when hp is depleted, object gets destroyed
 		if (this.currentHP <= 0){
+			//remove from GameManager
+			gm.GetComponent<GameManager>().currentEnemies.Remove(this.gameObject);
 			Debug.Log("DESTROYED " + this.gameObject);
 			GameObject.Destroy(this.gameObject);
 		}
