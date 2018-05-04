@@ -3,9 +3,10 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ColliderMaster.cs">
     <Files>
       <File FileName="Assets\Scripts\GameManager.cs" Line="55" Column="10" />
-      <File FileName="Assets\Scripts\Base Classes\clsUnitBase.cs" Line="42" Column="72" />
-      <File FileName="Assets\Scripts\AI\ComputerControllerBase.cs" Line="31" Column="25" />
-      <File FileName="Assets\Scripts\ColliderMaster.cs" Line="6" Column="42" />
+      <File FileName="Assets\Scripts\Base Classes\clsUnitBase.cs" Line="56" Column="5" />
+      <File FileName="Assets\Scripts\AI\ComputerControllerBase.cs" Line="9" Column="3" />
+      <File FileName="Assets\Scripts\ColliderMaster.cs" Line="15" Column="63" />
+      <File FileName="Assets\Scripts\CameraFollow.cs" Line="13" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

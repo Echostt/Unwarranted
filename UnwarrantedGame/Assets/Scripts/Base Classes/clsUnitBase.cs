@@ -38,8 +38,11 @@ public class clsUnitBase : MonoBehaviour {
 		scaleHPBar();
 		//when hp is depleted, object gets destroyed
 		if (this.currentHP <= 0){
-			//remove from GameManager
-			gm.GetComponent<GameManager>().currentEnemies.Remove(this.gameObject);
+			//remove from GameManager, each object needs to be checked. Maybe extrapolate
+			if (this.gameObject.tag =="Enemy")
+				gm.GetComponent<GameManager>().currentEnemies.Remove(this.gameObject);
+			else if (this.gameObject.tag == "Player")
+				gm.GetComponent<GameManager>().currentPlayers.Remove(this.gameObject);
 			Debug.Log("DESTROYED " + this.gameObject);
 			GameObject.Destroy(this.gameObject);
 		}
@@ -55,18 +58,13 @@ public class clsUnitBase : MonoBehaviour {
 
 	///Look at object in direction and handle accordingly
 	public void checkMove(Vector3 checkDirection){
-		RaycastHit hitInfo;
+		RaycastHit[] hitInfo = Physics.RaycastAll(this.gameObject.transform.position, checkDirection, 1.0f);
 		//if a collision is detected, handle the intervening object, otherwise check move cost
-		if (Physics.Raycast(this.gameObject.transform.position, checkDirection, out hitInfo, 1.0f)){
-			//all moves need to be checked from player's side and computer's side
-			if (this.gameObject.tag == "Player"){ //Player's Turn
-				gm.GetComponent<ColliderMaster>().checkCollideList(hitInfo.collider);
-			} else { //Computer's Turn
-				
-			}
+		if (hitInfo.Length > 0){
+			gm.GetComponent<ColliderMaster>().collideListHandlerUnit(this, hitInfo[0].collider);
 		} else {
-			Physics.Raycast(this.gameObject.transform.position + checkDirection, Vector3.down, out hitInfo, 1.0f);
-			this.moveCount -= gm.GetComponent<ColliderMaster>().checkCollideList(hitInfo.collider);
+			RaycastHit[] hitInfoGround = Physics.RaycastAll(this.gameObject.transform.position + checkDirection, Vector3.down, 1.0f);
+			this.moveCount -= gm.GetComponent<ColliderMaster>().collideListHandlerTerrain(hitInfoGround[0].collider);
 			this.gameObject.transform.Translate(checkDirection);
 		}
 
