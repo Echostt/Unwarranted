@@ -16,7 +16,6 @@ public class ComputerControllerBase : MonoBehaviour {
 		Vector3Int currentTile2 = new Vector3Int((int)target2.transform.position.x, (int)target2.transform.position.z, 0);
 		int xDiff = currentTile1.x - currentTile2.x;
 		int yDiff = currentTile1.y - currentTile2.y;
-		//Debug.Log("X: " + xDiff + " Y: " + yDiff);
 		if (Mathf.Abs(xDiff) > Mathf.Abs(yDiff)){ //further off in x
 			if(xDiff > 0)
 				return Vector3.left;

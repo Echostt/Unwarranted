@@ -59,7 +59,7 @@ public class clsUnitBase : MonoBehaviour {
 	///Look at object in direction and handle accordingly
 	public void checkMove(Vector3 checkDirection){
 		RaycastHit[] hitInfo = Physics.RaycastAll(this.gameObject.transform.position, checkDirection, 1.0f);
-		//if a collision is detected, handle the intervening object, otherwise check move cost
+		//if an object is detected, handle the intervening object, otherwise check move cost
 		if (hitInfo.Length > 0){
 			gm.GetComponent<ColliderMaster>().collideListHandlerUnit(this, hitInfo[0].collider);
 		} else {

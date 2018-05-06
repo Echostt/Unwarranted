@@ -12,7 +12,9 @@ public class ColliderMaster : MonoBehaviour {
 	///interactor collides with unit's collider col, handle interaction
 	public void collideListHandlerUnit(clsUnitBase interactor, Collider col){
 		clsUnitBase target = col.gameObject.GetComponent<clsUnitBase>();
-		Debug.Log("Int: " + interactor.atk + " Col: " + target.def);
-		target.reduceHP(interactor.atk - target.def);
+		if (target) {
+			Debug.Log ("Int: " + interactor.atk + " Col: " + target.def);
+			target.reduceHP (interactor.atk - target.def);
+		}
 	}
 }
