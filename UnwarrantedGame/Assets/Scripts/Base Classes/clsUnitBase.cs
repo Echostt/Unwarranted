@@ -43,7 +43,6 @@ public class clsUnitBase : MonoBehaviour {
 				gm.GetComponent<GameManager>().currentEnemies.Remove(this.gameObject);
 			else if (this.gameObject.tag == "Player")
 				gm.GetComponent<GameManager>().currentPlayers.Remove(this.gameObject);
-			Debug.Log("DESTROYED " + this.gameObject);
 			GameObject.Destroy(this.gameObject);
 		}
 	}
@@ -72,6 +71,13 @@ public class clsUnitBase : MonoBehaviour {
 			this.moveCount -= gm.GetComponent<ColliderMaster>().collideListHandlerTerrain(hitInfoGround[0].collider);
 			this.gameObject.transform.Translate(checkDirection);
 		}
-
 	}
+
+    public void checkTileImprovement () {
+        RaycastHit[] hitInfoGround = Physics.RaycastAll(this.gameObject.transform.position + Vector3.up, Vector3.down, 1.0f);
+        //only two objects are ever on the same tile. If you're idle on the tile this applies the affect.
+        if (hitInfoGround.Length > 1)
+            hitInfoGround[0].collider.gameObject.GetComponent<clsTileImprovement>().idleAction(this);
+    }
+
 }

@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour {
 				}
 				isPlayerTurn = false;
 			}
-		} else{
+		} else {
 			//Computer's turn, AI implementations todo
 			for (int i = 0; i < currentEnemies.Count; ++i){
 				Vector3 directionChoice = this.GetComponent<ComputerControllerBase>().moveTowardSimple(
@@ -60,9 +60,20 @@ public class GameManager : MonoBehaviour {
 					GameObject.FindGameObjectWithTag("Player"));
 				currentEnemies[i].GetComponent<clsUnitBase>().checkMove(directionChoice);
 			}
+            callCheckTiles();
 			isPlayerTurn = true;
 		}
 	}
+
+    //initates time improvement check for all current units
+    void callCheckTiles () {
+        for (int i = 0; i < currentEnemies.Count; ++i) {
+            currentEnemies[i].GetComponent<clsUnitBase>().checkTileImprovement();
+        }
+        for (int i = 0; i < currentPlayers.Count; ++i) {
+            currentPlayers[i].GetComponent<clsUnitBase>().checkTileImprovement();
+        }
+    }
 
 	//simple turn ending function
 	public void setPlayerTurnFalse(){
