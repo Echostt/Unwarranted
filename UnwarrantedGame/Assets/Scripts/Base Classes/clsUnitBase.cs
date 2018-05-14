@@ -59,11 +59,16 @@ public class clsUnitBase : MonoBehaviour {
 	///Look at object in direction and handle accordingly
 	public void checkMove(Vector3 checkDirection){
 		RaycastHit[] hitInfo = Physics.RaycastAll(this.gameObject.transform.position, checkDirection, 1.0f);
-		//if an object is detected, handle the intervening object, otherwise check move cost
-		if (hitInfo.Length > 0){
-			gm.GetComponent<ColliderMaster>().collideListHandlerUnit(this, hitInfo[0].collider);
+        //if an object is detected, handle the intervening object, otherwise check move cost
+        int collideAt = -1; //used to see if moving to occupied tile
+        for (int i = 0; i < hitInfo.Length; ++i)
+            if (hitInfo[i].collider.gameObject.CompareTag("Enemy") || hitInfo[i].collider.gameObject.CompareTag("Player")) {
+                collideAt = i;
+            }
+		if (collideAt != -1){
+            gm.GetComponent<ColliderMaster>().collideListHandlerUnit(this, hitInfo[collideAt].collider, collideAt);
 		} else {
-			RaycastHit[] hitInfoGround = Physics.RaycastAll(this.gameObject.transform.position + checkDirection, Vector3.down, 1.0f);
+            RaycastHit[] hitInfoGround = Physics.RaycastAll(this.gameObject.transform.position + checkDirection, Vector3.down, 1.0f);
 			this.moveCount -= gm.GetComponent<ColliderMaster>().collideListHandlerTerrain(hitInfoGround[0].collider);
 			this.gameObject.transform.Translate(checkDirection);
 		}

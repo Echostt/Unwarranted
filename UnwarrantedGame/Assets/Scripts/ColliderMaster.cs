@@ -10,11 +10,19 @@ public class ColliderMaster : MonoBehaviour {
 	}
 
 	///interactor collides with unit's collider col, handle interaction
-	public void collideListHandlerUnit(clsUnitBase interactor, Collider col){
-		clsUnitBase target = col.gameObject.GetComponent<clsUnitBase>();
-		if (target) {
-			Debug.Log ("Int: " + interactor.atk + " Col: " + target.def);
-			target.reduceHP (interactor.atk - target.def);
-		}
+	public void collideListHandlerUnit(clsUnitBase interactor, Collider col, int collideAt){
+        Debug.Log("Interactor: " + interactor + " C=> " + col.tag + " CollideAt: " + collideAt);
+        clsUnitBase target = col.gameObject.GetComponent<clsUnitBase>();
+        if (target != null) {
+            RaycastHit[] hitInfo = Physics.RaycastAll(col.gameObject.transform.position + Vector3.up, Vector3.down, 1.0f);
+            Debug.DrawRay(col.gameObject.transform.position, Vector3.down, Color.green, 100.0f);
+            //get adjustments from tile improvements
+            if (collideAt == 0) {
+                target.reduceHP(interactor.atk - target.def);
+            } else {
+                int reduceAttackFromImprovement = hitInfo[collideAt - 1].collider.gameObject.GetComponent<clsTileImprovement>().defChange;
+                target.reduceHP(interactor.atk - target.def - reduceAttackFromImprovement);
+            }
+        }
 	}
 }

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4463687295379894}
   - component: {fileID: 33761861428983886}
   - component: {fileID: 23255055320632736}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HPbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 65197847532515086}
   - component: {fileID: 23735201151236532}
   - component: {fileID: 114918954951710248}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemyGeneric
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1817397526973500}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.1, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -87,6 +87,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 5c1016f5af28e6941abce90305f4ca09, type: 2}
   m_StaticBatchInfo:
@@ -121,6 +122,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 1e6d4b58ca20e294186241b870de13c2, type: 2}
   m_StaticBatchInfo:
@@ -183,7 +185,7 @@ MonoBehaviour:
   lvl: 0
   maxHP: 3
   currentHP: 3
-  atk: 0
+  atk: 1
   def: 0
   moveCount: 0
   ID: 0

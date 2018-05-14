@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
 	void turnHandler(){
 		if (isPlayerTurn){
 			//some easy player movement
-			if(Input.anyKeyDown) {
+			if(Input.anyKeyDown) { //press key, char moves that direction
 				if(Input.GetKeyDown(KeyCode.UpArrow)) { 
 					GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.forward);
 				} else if(Input.GetKeyDown(KeyCode.DownArrow)) {
@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour {
 
 	/// <summary>
 	/// Converts Player position to TileMap coords and removes the Tile at that location.
+    /// Used to change/remove grid overlay at that tile
 	/// </summary>
 	void changeTileAtPlayerLoc(){
 		//select the Grid for tile position
