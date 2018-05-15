@@ -187,5 +187,5 @@ MonoBehaviour:
   currentHP: 3
   atk: 1
   def: 0
-  moveCount: 0
+  moveCount: 5
   ID: 0

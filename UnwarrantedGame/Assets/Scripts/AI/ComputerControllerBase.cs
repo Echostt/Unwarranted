@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class ComputerControllerBase : MonoBehaviour {
 
 	public void computerTurnHandler(){
-		
+        
 	}
 
 	///Returns the x or y direction required for target 1 to reach target 2 in the shortest distance.

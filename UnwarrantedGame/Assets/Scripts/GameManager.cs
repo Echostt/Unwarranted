@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour {
 	//enemy objects
 	public List<GameObject> currentEnemies;
 
-	private bool isPlayerTurn;
+	public bool isPlayerTurn;
 
-	void Start(){
+    void Start(){
 		//find gameobjects
 		//load currently active players and enemies
 		//have to find objects into an array, and then fill into List to be used for computer controller
@@ -39,19 +39,18 @@ public class GameManager : MonoBehaviour {
 
 	void turnHandler(){
 		if (isPlayerTurn){
-			//some easy player movement
-			if(Input.anyKeyDown) { //press key, char moves that direction
-				if(Input.GetKeyDown(KeyCode.UpArrow)) { 
-					GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.forward);
-				} else if(Input.GetKeyDown(KeyCode.DownArrow)) {
-					GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.back);
-				} else if(Input.GetKeyDown(KeyCode.RightArrow)) {
-					GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.right);
-				} else if(Input.GetKeyDown(KeyCode.LeftArrow)) {
-					GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.left);
-				}
-				isPlayerTurn = false;
-			}
+            //some easy player movement
+            if (Input.anyKeyDown) { //press key, char moves that direction
+                if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.forward);
+                } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.back);
+                } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.right);
+                } else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.left);
+                }
+            }
 		} else {
 			//Computer's turn, AI implementations todo
 			for (int i = 0; i < currentEnemies.Count; ++i){
@@ -62,6 +61,7 @@ public class GameManager : MonoBehaviour {
 			}
             callCheckTiles();
 			isPlayerTurn = true;
+            currentPlayers[0].GetComponent<clsUnitBase>().resetMovePoints();
 		}
 	}
 

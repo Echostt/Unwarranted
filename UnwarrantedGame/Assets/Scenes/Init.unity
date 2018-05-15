@@ -205,7 +205,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (24)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -258,7 +258,17 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a612791c7e81a324eacff17046bd4a98, type: 2}
+      objectReference: {fileID: 2100000, guid: dd11ef07d94cd3a4daf438a8a29e9d73, type: 2}
+    - target: {fileID: 114162699885565178, guid: 181d53f0c6882e84c817d9c5dea6293c,
+        type: 2}
+      propertyPath: currentMoveCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114162699885565178, guid: 181d53f0c6882e84c817d9c5dea6293c,
+        type: 2}
+      propertyPath: maxMoveCount
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 181d53f0c6882e84c817d9c5dea6293c, type: 2}
   m_IsPrefabParent: 0
@@ -452,7 +462,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (10)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -554,7 +564,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (1)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -911,7 +921,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (31)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -962,7 +972,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (26)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -1115,7 +1125,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (40)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -1472,7 +1482,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (14)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -1625,7 +1635,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (55)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -1727,7 +1737,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (12)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -1778,7 +1788,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (13)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -1829,7 +1839,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (11)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -2188,7 +2198,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (30)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -2392,7 +2402,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (50)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -2443,7 +2453,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (34)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -2643,7 +2653,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (6)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -2819,7 +2829,7 @@ GameObject:
   - component: {fileID: 384499352}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2837,6 +2847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPlayers: []
   currentEnemies: []
+  isPlayerTurn: 0
 --- !u!4 &384499350
 Transform:
   m_ObjectHideFlags: 0
@@ -3113,7 +3124,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (48)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -3634,7 +3645,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (21)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -3838,7 +3849,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (51)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -3991,7 +4002,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (41)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -4195,7 +4206,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (56)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -4297,7 +4308,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (9)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -4464,7 +4475,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (20)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -5023,6 +5034,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
+      propertyPath: m_Name
+      value: GT_Boundary
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
   m_IsPrefabParent: 0
@@ -5072,7 +5087,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (49)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -5510,7 +5525,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (33)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -5711,6 +5726,16 @@ Prefab:
     - target: {fileID: 4461105132571174, guid: 9c8d29b82582d47488cd5f8a838cb518, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114918954951710248, guid: 9c8d29b82582d47488cd5f8a838cb518,
+        type: 2}
+      propertyPath: currentMoveCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114918954951710248, guid: 9c8d29b82582d47488cd5f8a838cb518,
+        type: 2}
+      propertyPath: maxMoveCount
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9c8d29b82582d47488cd5f8a838cb518, type: 2}
@@ -6253,7 +6278,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (7)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -6400,7 +6425,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 21
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -6411,7 +6436,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: End PTurn
+  m_Text: End Turn
 --- !u!222 &1108412628
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6794,7 +6819,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (5)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -6998,7 +7023,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (25)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -7151,7 +7176,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (45)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -7455,11 +7480,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114370441833663612, guid: 28b73babb4f04f047bbcc87f56443114,
-        type: 2}
-      propertyPath: atk
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28b73babb4f04f047bbcc87f56443114, type: 2}
   m_IsPrefabParent: 0
@@ -7713,7 +7733,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (44)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -29937,7 +29957,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (38)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -30039,7 +30059,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (3)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -30141,7 +30161,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (2)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -30341,7 +30361,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (22)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -30545,7 +30565,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (42)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -30749,7 +30769,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (8)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -30800,7 +30820,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (23)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -31208,7 +31228,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (47)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -31667,7 +31687,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (15)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -31718,7 +31738,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (4)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -31769,7 +31789,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (18)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -31871,7 +31891,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (52)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -31973,7 +31993,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (36)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -32330,7 +32350,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (43)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -32381,7 +32401,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (37)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -32432,7 +32452,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (32)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -32483,7 +32503,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (54)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -32504,6 +32524,7 @@ GameObject:
   - component: {fileID: 1894378287}
   - component: {fileID: 1894378286}
   - component: {fileID: 1894378285}
+  - component: {fileID: 1894378289}
   m_Layer: 0
   m_Name: EndTrigger
   m_TagString: Untagged
@@ -32526,7 +32547,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 864b11cfed3b15242ab7691c78c9efeb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -32578,6 +32599,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1894378289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1894378284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce95593452df33146bf4bd3fa19399e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defChange: 2
+  hpRestoredPerTurn: -5
+  moveChange: 0
 --- !u!1001 &1899475371
 Prefab:
   m_ObjectHideFlags: 0
@@ -32619,7 +32654,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (29)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -32721,7 +32756,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (17)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -32874,7 +32909,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (53)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -32976,7 +33011,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (28)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -33180,7 +33215,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (27)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -33682,7 +33717,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (46)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -33784,7 +33819,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (16)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -33835,7 +33870,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (57)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
@@ -33988,7 +34023,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1057538885607188, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}
       propertyPath: m_Name
-      value: GT_Lava1 (35)
+      value: GT_Boundary
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45c0a7005ddeac4fbd2a0908b8bb407, type: 2}

@@ -20,7 +20,8 @@ public class clsUnitBase : MonoBehaviour {
 		// defence
 	public int def;
 		//movement points
-	public int moveCount;
+	public int currentMoveCount;
+    public int maxMoveCount;
 
 	//Number used for identification within gamemanager
 	public int ID;
@@ -47,6 +48,13 @@ public class clsUnitBase : MonoBehaviour {
 		}
 	}
 
+    /// <summary>
+    /// Resets current move count to max value.
+    /// </summary>
+    public void resetMovePoints () {
+        this.currentMoveCount = this.maxMoveCount;
+    }
+
 	///Adjust hp bar to be proportially the size of hp current/total
 	private void scaleHPBar(){
 		Transform hpBarScale = this.gameObject.transform.GetChild(0).gameObject.GetComponent<Transform>();
@@ -68,8 +76,15 @@ public class clsUnitBase : MonoBehaviour {
             gm.GetComponent<ColliderMaster>().collideListHandlerUnit(this, hitInfo[collideAt].collider, collideAt);
 		} else {
             RaycastHit[] hitInfoGround = Physics.RaycastAll(this.gameObject.transform.position + checkDirection, Vector3.down, 1.0f);
-			this.moveCount -= gm.GetComponent<ColliderMaster>().collideListHandlerTerrain(hitInfoGround[0].collider);
-			this.gameObject.transform.Translate(checkDirection);
+            int nextMoveCost = gm.GetComponent<ColliderMaster>().collideListHandlerTerrain(hitInfoGround[0].collider);
+            if (nextMoveCost <= currentMoveCount) {
+                this.currentMoveCount -= nextMoveCost;
+                this.gameObject.transform.Translate(checkDirection);
+            }
+
+            //TEMP FOR PLAYER TURN STOP 0-----------------------------------------------------------------------------0
+            if (this.gameObject.CompareTag("Player") && currentMoveCount == 0)
+                gm.GetComponent<GameManager>().setPlayerTurnFalse();
 		}
 	}
 

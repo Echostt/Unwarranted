@@ -11,7 +11,6 @@ public class ColliderMaster : MonoBehaviour {
 
 	///interactor collides with unit's collider col, handle interaction
 	public void collideListHandlerUnit(clsUnitBase interactor, Collider col, int collideAt){
-        Debug.Log("Interactor: " + interactor + " C=> " + col.tag + " CollideAt: " + collideAt);
         clsUnitBase target = col.gameObject.GetComponent<clsUnitBase>();
         if (target != null) {
             RaycastHit[] hitInfo = Physics.RaycastAll(col.gameObject.transform.position + Vector3.up, Vector3.down, 1.0f);
