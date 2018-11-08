@@ -4,11 +4,6 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class ComputerControllerBase : MonoBehaviour {
-
-	public void computerTurnHandler(){
-        
-	}
-
 	///Returns the x or y direction required for target 1 to reach target 2 in the shortest distance.
 	public Vector3 moveTowardSimple(GameObject target1, GameObject target2){
 		//get positions of object moving (target1), and destination target (target2)

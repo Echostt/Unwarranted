@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 	//player characters
 	public List<GameObject> currentPlayers;
 	//enemy objects
 	public List<GameObject> currentEnemies;
-
-	public bool isPlayerTurn;
+    public Text fpsText;
 
     void Start(){
 		//find gameobjects
@@ -27,78 +26,11 @@ public class GameManager : MonoBehaviour {
 			cpy.GetComponent<clsUnitBase>().ID = i;
 			currentEnemies.Add(cpy);
 		}
-
-		startingGameCommands();
+        fpsText = GameObject.Find("FPS").GetComponent<Text>();
 	}
 
-	void startingGameCommands(){
-		//launch tutorial, controls, info
-		isPlayerTurn = true;
-		turnHandler();
-	}
-
-	void turnHandler(){
-		if (isPlayerTurn){
-            //some easy player movement
-            if (Input.anyKeyDown) { //press key, char moves that direction
-                if (Input.GetKeyDown(KeyCode.UpArrow)) {
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.forward);
-                } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.back);
-                } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.right);
-                } else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<clsUnitBase>().checkMove(Vector3.left);
-                }
-            }
-		} else {
-			//Computer's turn, AI implementations todo
-			for (int i = 0; i < currentEnemies.Count; ++i){
-				Vector3 directionChoice = this.GetComponent<ComputerControllerBase>().moveTowardSimple(
-					currentEnemies[i].gameObject, 
-					GameObject.FindGameObjectWithTag("Player"));
-				currentEnemies[i].GetComponent<clsUnitBase>().checkMove(directionChoice);
-			}
-            callCheckTiles();
-			isPlayerTurn = true;
-            currentPlayers[0].GetComponent<clsUnitBase>().resetMovePoints();
-		}
-	}
-
-    //initates time improvement check for all current units
-    void callCheckTiles () {
-        for (int i = 0; i < currentEnemies.Count; ++i) {
-            currentEnemies[i].GetComponent<clsUnitBase>().checkTileImprovement();
-        }
-        for (int i = 0; i < currentPlayers.Count; ++i) {
-            currentPlayers[i].GetComponent<clsUnitBase>().checkTileImprovement();
-        }
+    void Update() {
+        fpsText.text = "FPS: " + 1.0f / Time.smoothDeltaTime;
     }
-
-	//simple turn ending function
-	public void setPlayerTurnFalse(){
-		isPlayerTurn = false;
-	}
-	//allows the player to gain control
-	public void setPlayerTurnTrue(){
-		isPlayerTurn = true;
-	}
-
-	void Update(){
-		turnHandler();
-	}
-
-
-	/// <summary>
-	/// Converts Player position to TileMap coords and removes the Tile at that location.
-    /// Used to change/remove grid overlay at that tile
-	/// </summary>
-	void changeTileAtPlayerLoc(){
-		//select the Grid for tile position
-		//Debug.Log(tiles.LocalToCell(GameObject.Find("Player").transform.position));
-		Vector3Int currentTile = new Vector3Int((int)this.gameObject.transform.position.x, (int)this.gameObject.transform.position.z, 0);
-		UnityEngine.Tilemaps.Tilemap tilemap = GameObject.Find("Grid").GetComponent<Grid>().GetComponentInChildren<Tilemap>();
-		tilemap.SetTile(currentTile, null);
-	}
 
 }
