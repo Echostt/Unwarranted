@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour {
 	//enemy objects
 	public List<GameObject> currentEnemies;
     public Text fpsText;
+    public Text scoreText;
+
+    private int score = 0;
 
     void Start(){
 		//find gameobjects
@@ -31,6 +34,11 @@ public class GameManager : MonoBehaviour {
 
     void Update() {
         fpsText.text = "FPS: " + 1.0f / Time.smoothDeltaTime;
+    }
+
+    public void AddToScore(int value) {
+        score += value;
+        scoreText.text = "# " + score;
     }
 
 }
