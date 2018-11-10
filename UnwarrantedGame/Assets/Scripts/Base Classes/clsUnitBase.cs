@@ -18,25 +18,19 @@ public class clsUnitBase : MonoBehaviour {
 	//Number used for identification within gamemanager
 	public int ID;
 
-	private GameObject gm;
-
-	void Start(){
-		gm = GameObject.Find("GameManager");
-	}
+	public GoopMaster spawner;
 
 	///Reduces hp by passed amount
 	public void reduceHP(int value){
+        Debug.Log("Obj: " + this.gameObject + " hp: " + currentHP + " reduced by: " + value);
 		this.currentHP -= value;
 		//update hp bar to reflect current hp
 		//scaleHPBar();
 		//when hp is depleted, object gets destroyed
 		if (this.currentHP <= 0){
 			//remove from GameManager, each object needs to be checked. Maybe extrapolate
-			if (this.gameObject.tag =="Enemy")
-				gm.GetComponent<GameManager>().currentEnemies.Remove(this.gameObject);
-			else if (this.gameObject.tag == "Player")
-				gm.GetComponent<GameManager>().currentPlayers.Remove(this.gameObject);
 			GameObject.Destroy(this.gameObject);
+            spawner.isAvailableToSpawn = true;
 		}
 	}
 }

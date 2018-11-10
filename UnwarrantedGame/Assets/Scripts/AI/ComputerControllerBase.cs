@@ -4,6 +4,19 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class ComputerControllerBase : MonoBehaviour {
+    public float moveAddForceTime;
+    public float moveSpeed;
+
+    private float lastMoved;
+    private Vector3 moveDirection = Vector3.back; //temp go single direction
+
+    public void Update() {
+        if (Time.time - lastMoved > moveAddForceTime) {
+            lastMoved = Time.time;
+            this.gameObject.GetComponent<Rigidbody>().AddForce(moveDirection * moveSpeed, ForceMode.Force);
+        }
+    }
+
 	///Returns the x or y direction required for target 1 to reach target 2 in the shortest distance.
 	public Vector3 moveTowardSimple(GameObject target1, GameObject target2){
 		//get positions of object moving (target1), and destination target (target2)

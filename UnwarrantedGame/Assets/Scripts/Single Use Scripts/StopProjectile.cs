@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyGoopOnContact : MonoBehaviour {
-
+public class StopProjectile : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Goop"))
-            Destroy(other.gameObject);
+        other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 }

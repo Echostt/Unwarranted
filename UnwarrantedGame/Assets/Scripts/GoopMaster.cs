@@ -5,13 +5,18 @@ using UnityEngine;
 public class GoopMaster : MonoBehaviour {
 
     public float timeToGoop;
+    public bool isAvailableToSpawn = true;
+
     private float lastTimeGoop;
 
 	// Update is called once per frame
 	void Update () {
-		if (Time.time - lastTimeGoop > timeToGoop) {
+		if (isAvailableToSpawn && Time.time - lastTimeGoop > timeToGoop) {
+            isAvailableToSpawn = false;
             lastTimeGoop = Time.time;
-            Instantiate(Resources.Load("GoopTest"), this.gameObject.transform.position + Vector3.up + Random.insideUnitSphere/5, Quaternion.identity);
+            GameObject spawn = (GameObject)Resources.Load("GoopTest");
+            spawn.GetComponent<clsUnitBase>().spawner = this.GetComponent<GoopMaster>();
+            Instantiate(spawn, this.gameObject.transform.position + Vector3.up + Vector3.back, Quaternion.identity);
         }
 	}
 }
