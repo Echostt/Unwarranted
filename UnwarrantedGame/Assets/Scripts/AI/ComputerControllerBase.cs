@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class ComputerControllerBase : MonoBehaviour {
     public Vector3 target;
@@ -8,6 +9,20 @@ public class ComputerControllerBase : MonoBehaviour {
     public void Start() {
         this.target = GameObject.FindGameObjectWithTag("Pillar").transform.position;
         agent.SetDestination(target);
+    }
+
+    public void hitByProjectile(Vector3 moveDirection, float knockbackPower) {
+        IEnumerator routine = moveFromProjectile(moveDirection, knockbackPower);
+        StartCoroutine(routine);
+    }
+
+    public IEnumerator moveFromProjectile(Vector3 moveDirection, float knockbackPower) {
+        agent.isStopped = true;
+        this.gameObject.GetComponent<Rigidbody>().AddForce(moveDirection * knockbackPower, ForceMode.VelocityChange);
+        yield return new WaitForSeconds(knockbackPower * 0.3f);
+        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        agent.velocity = Vector3.zero;
+        agent.isStopped = false;
     }
 
 	///Returns the x or y direction required for target 1 to reach target 2 in the shortest distance.

@@ -16,7 +16,7 @@ public class GoopMaster : MonoBehaviour {
             lastTimeGoop = Time.time;
             GameObject spawn = (GameObject)Resources.Load("GoopTest");
             spawn.GetComponent<clsUnitBase>().spawner = this.GetComponent<GoopMaster>();
-            Instantiate(spawn, this.gameObject.transform.position + Vector3.up + Vector3.back, Quaternion.identity);
+            Instantiate(spawn, this.gameObject.transform.position + Vector3.back, Quaternion.identity);
         }
 	}
 }

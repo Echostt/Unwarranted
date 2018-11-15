@@ -27,6 +27,7 @@ public class TurretController : MonoBehaviour {
                     sp.transform.LookAt(col.gameObject.transform);
 
                     Instantiate(sp, this.gameObject.transform.position, this.gameObject.transform.rotation);
+                    return;
                 }
             }
         }

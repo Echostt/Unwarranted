@@ -22,7 +22,7 @@ public class clsUnitBase : MonoBehaviour {
 
 	///Reduces hp by passed amount
 	public void reduceHP(int value){
-        Debug.Log("Obj: " + this.gameObject + " hp: " + currentHP + " reduced by: " + value);
+        //Debug.Log("Obj: " + this.gameObject + " hp: " + currentHP + " reduced by: " + value);
 		this.currentHP -= value;
 		//update hp bar to reflect current hp
 		//scaleHPBar();
