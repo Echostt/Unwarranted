@@ -8,6 +8,7 @@ TagManager:
   - Terrain
   - Improvement
   - Goop
+  - Pillar
   layers:
   - Default
   - TransparentFX

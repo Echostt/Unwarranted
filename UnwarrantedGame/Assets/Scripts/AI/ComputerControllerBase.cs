@@ -1,20 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Tilemaps;
+﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class ComputerControllerBase : MonoBehaviour {
-    public float moveAddForceTime;
-    public float moveSpeed;
+    public Vector3 target;
+    public NavMeshAgent agent;
 
-    private float lastMoved;
-    private Vector3 moveDirection = Vector3.back; //temp go single direction
-
-    public void Update() {
-        if (Time.time - lastMoved > moveAddForceTime) {
-            lastMoved = Time.time;
-            this.gameObject.GetComponent<Rigidbody>().AddForce(moveDirection * moveSpeed, ForceMode.Force);
-        }
+    public void Start() {
+        this.target = GameObject.FindGameObjectWithTag("Pillar").transform.position;
+        agent.SetDestination(target);
     }
 
 	///Returns the x or y direction required for target 1 to reach target 2 in the shortest distance.

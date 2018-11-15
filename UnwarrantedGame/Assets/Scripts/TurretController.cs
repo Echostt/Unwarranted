@@ -5,18 +5,7 @@ using UnityEngine;
 public class TurretController : MonoBehaviour {
     public float fireRate;
 
-    private GameManager gm;
     private float lastFireTime;
-
-    private void Start() {
-        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-    }
-
-    public void OnTriggerEnter(Collider other) {
-        //deduct turret hp/stam --------------------------
-        Debug.Log("triggered! other: " + other.gameObject);
-        other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 25, ForceMode.VelocityChange);
-    }
 
     void Update () {
         if (Time.time - lastFireTime > fireRate) {
@@ -29,7 +18,15 @@ public class TurretController : MonoBehaviour {
                 characterToCollider = (col.transform.position - transform.position).normalized;
                 dot = Vector3.Dot(characterToCollider, transform.forward);
                 if (dot >= Mathf.Cos(55)) {
-                    Instantiate(Resources.Load("SimpleProjectile"), this.gameObject.transform.position + Vector3.forward, Quaternion.identity);
+                    //calculate firing angle
+                    Vector3 dir = (col.gameObject.transform.position - this.gameObject.transform.position).normalized;
+                    //Quaternion rotation = Quaternion.LookRotation(dir);
+                    transform.LookAt(col.gameObject.transform);
+                    //this.gameObject.transform.rotation = rotation;
+                    GameObject sp = (GameObject)Resources.Load("SimpleProjectile");
+                    sp.transform.LookAt(col.gameObject.transform);
+
+                    Instantiate(sp, this.gameObject.transform.position, this.gameObject.transform.rotation);
                 }
             }
         }

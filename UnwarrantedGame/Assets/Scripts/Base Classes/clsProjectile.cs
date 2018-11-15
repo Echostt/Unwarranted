@@ -4,21 +4,16 @@ public class clsProjectile : MonoBehaviour {
     public float moveSpeed;
     public float knockbackPower;
 
-    private Vector3 moveDirection;
-
-    public void Start() {
-        moveDirection = Vector3.forward; //temp for shooting straight
-    }
+    private Vector3 moveDirection = Vector3.forward;
 
     public void Update() {
-        this.gameObject.transform.Translate(moveDirection * moveSpeed);
+        this.gameObject.transform.Translate(moveDirection * moveSpeed, Space.Self);
     }
 
     private void OnTriggerEnter(Collider other) {
         Debug.Log("Projectile hit " + other);
-        if (CompareTag("Goop")) {
-            Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
-            rb.AddForce(Vector3.forward * knockbackPower, ForceMode.Impulse);
+        if (other.gameObject.CompareTag("Goop")) {
+            other.gameObject.gameObject.transform.position -= this.gameObject.transform.TransformDirection(moveDirection) * knockbackPower;
             other.gameObject.GetComponent<clsUnitBase>().reduceHP(1);
             Destroy(this.gameObject);
         }
