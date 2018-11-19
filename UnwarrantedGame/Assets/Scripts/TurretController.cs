@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TurretController : MonoBehaviour {
     public float fireRate;
+    public float fireRange;
 
     private float lastFireTime;
 
@@ -11,7 +12,7 @@ public class TurretController : MonoBehaviour {
         if (Time.time - lastFireTime > fireRate) {
             lastFireTime = Time.time;
             Debug.DrawRay(this.transform.position, Vector3.forward * 5, Color.red, 1f);
-            Collider[] cols = Physics.OverlapSphere(this.gameObject.transform.position, 5f, 1 << 10); //5f detect distance
+            Collider[] cols = Physics.OverlapSphere(this.gameObject.transform.position, fireRange, 1 << 10); //5f detect distance
             float dot;
             Vector3 characterToCollider;
             foreach (Collider col in cols) {
@@ -20,9 +21,7 @@ public class TurretController : MonoBehaviour {
                 if (dot >= Mathf.Cos(55)) {
                     //calculate firing angle
                     Vector3 dir = (col.gameObject.transform.position - this.gameObject.transform.position).normalized;
-                    //Quaternion rotation = Quaternion.LookRotation(dir);
                     transform.LookAt(col.gameObject.transform);
-                    //this.gameObject.transform.rotation = rotation;
                     GameObject sp = (GameObject)Resources.Load("SimpleProjectile");
                     sp.transform.LookAt(col.gameObject.transform);
 

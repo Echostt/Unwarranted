@@ -20,7 +20,7 @@ public class clsProjectile : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Goop")) {
             other.gameObject.GetComponent<ComputerControllerBase>().hitByProjectile(this.gameObject.transform.TransformDirection(moveDirection), this.knockbackPower);
             other.gameObject.GetComponent<clsUnitBase>().reduceHP(1);
